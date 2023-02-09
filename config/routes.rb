@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :chat_rooms, only: [:index, :create, :show]
   resources :messages, only: [:create]
+
+  mount ActionCable.server => '/cable'
 end
